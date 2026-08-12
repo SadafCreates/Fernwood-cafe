@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap');
+
+:root {
+  --cream: #FAF3EC;
+  --cream-deep: #F1E7DA;
+  --band-sage-tint: #E9EEE1;
+  --band-blush-tint: #F6DEDA;
+  --blush: #E4B9B4;
+  --blush-deep: #D69E97;
+  --sage: #96A587;
+  --sage-deep: #74856A;
+  --grey: #8A8073;
+  --ink: #3B352E;
+  --ink-soft: #6B6255;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-script: 'Caveat', cursive;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+}
+
+.section {
+  padding: 90px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 20px;
+  }
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+/* Full-bleed colored bands, used to give each section its own
+   atmosphere so the page has rhythm instead of sitting flat on cream. */
+.band {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.band-sage {
+  background:
+    radial-gradient(circle at 85% 0%, rgba(255,255,255,0.5), transparent 55%),
+    var(--band-sage-tint);
+}
+
+.band-blush {
+  background:
+    radial-gradient(circle at 10% 100%, rgba(255,255,255,0.5), transparent 55%),
+    var(--band-blush-tint);
+}
+
+.band-ink {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.band-ink .eyebrow {
+  color: var(--blush);
+}
+
+/* Scroll-reveal utility: fades + lifts in when visible */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--sage-deep);
+  outline-offset: 3px;
+}

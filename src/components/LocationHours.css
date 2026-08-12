@@ -1,0 +1,41 @@
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.location-address {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 16px 0 24px;
+}
+
+.location-map-link {
+  display: inline-flex;
+}
+
+.hours-list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cream-deep);
+  font-size: 14px;
+}
+
+.hours-time {
+  font-weight: 600;
+  color: var(--sage-deep);
+}
+
+@media (max-width: 720px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
