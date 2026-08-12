@@ -2,7 +2,9 @@
 
 A React (Vite) landing page for a fictional cozy neighborhood cafe, built as a front-end case study exploring motion and ambient interactivity.
 
-**[Live Demo](#)** — replace with your Netlify URL after deploying
+**[Live Demo](#)** — fernwood-cafe.netlify.app
+
+
 
 ## About
 
